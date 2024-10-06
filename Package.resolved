@@ -1,0 +1,15 @@
+{
+  "originHash" : "c42f69d132ded99299daa88813364f8523d07537012c779e78622b591fa884a9",
+  "pins" : [
+    {
+      "identity" : "swift-tagged",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-tagged",
+      "state" : {
+        "revision" : "3907a9438f5b57d317001dc99f3f11b46882272b",
+        "version" : "0.10.0"
+      }
+    }
+  ],
+  "version" : 3
+}
