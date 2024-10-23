@@ -6,10 +6,7 @@ import PackageDescription
 let package = Package(
     name: "UserModels",
 	platforms: [
-			.iOS(.v18),
-			.macOS(.v15),
-			.tvOS(.v16),
-			.watchOS(.v8),
+		.macOS(.v15)
 	],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -18,7 +15,13 @@ let package = Package(
             targets: ["UserModels"]),
     ],
 	dependencies: [
-			.package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.10.0")
+		.package(url: "https://github.com/vapor/vapor", from: "4.106.0"),
+		.package(url: "https://github.com/vapor/fluent", from: "4.12.0"),
+		.package(url: "https://github.com/vapor/fluent-sqlite-driver", from: "4.8.0"),
+		.package(name: "UserDTOs", path: "../UserDTOs"),
+//		.package(name: "UsersLocalizations", path: "../UsersLocalizations"),
+//		.package(name: "DateExtensions", path: "../DateExtensions"),
+		.package(name: "AuthenticationDTOs", path: "../AuthenticationDTOs")
 	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -27,8 +30,32 @@ let package = Package(
             name: "UserModels",
 			dependencies: [
 				.product(
-					name: "Tagged",
-					package: "swift-tagged"
+					name: "Vapor",
+					package: "Vapor"
+				),
+				.product(
+					name: "Fluent",
+					package: "Fluent"
+				),
+				.product(
+					name: "FluentSQLiteDriver",
+					package: "fluent-sqlite-driver"
+				),
+				.product(
+					name: "UserDTOs",
+					package: "UserDTOs"
+				),
+//				.product(
+//					name: "Lingo",
+//					package: "UsersLocalizations"
+//				),
+//				.product(
+//					name: "DateExtensions",
+//					package: "DateExtensions"
+//				),
+				.product(
+					name: "AuthenticationDTOs",
+					package: "AuthenticationDTOs"
 				)
 			]
 		),
